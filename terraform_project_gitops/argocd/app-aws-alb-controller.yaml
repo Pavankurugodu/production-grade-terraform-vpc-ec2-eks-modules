@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: aws-alb-controller
+  namespace: argocd
+spec:
+  project: default
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: kube-system
+  source:
+    repoURL: 'https://github.com/YOUR_ORG/YOUR_REPO' # update to your git repo
+    targetRevision: HEAD
+    path: 'helm/aws-alb-controller'
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

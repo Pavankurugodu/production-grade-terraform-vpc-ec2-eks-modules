@@ -1,0 +1,8 @@
+controller:
+  serviceAccount:
+    create: false
+    name: ebs-csi-controller-sa
+storageClasses:
+  gp3:
+    parameters:
+      type: gp3

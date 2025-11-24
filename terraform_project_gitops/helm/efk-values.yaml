@@ -1,0 +1,9 @@
+elasticsearch:
+  persistence:
+    enabled: true
+    size: 10Gi
+    storageClass: gp3
+kibana:
+  enabled: true
+fluentBit:
+  enabled: true

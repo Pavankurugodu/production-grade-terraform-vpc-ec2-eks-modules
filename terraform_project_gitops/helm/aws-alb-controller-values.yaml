@@ -1,0 +1,5 @@
+controller:
+  clusterName: PLACEHOLDER_CLUSTER_NAME
+  serviceAccount:
+    create: false
+    name: aws-load-balancer-controller

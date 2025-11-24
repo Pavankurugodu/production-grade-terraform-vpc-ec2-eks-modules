@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: aws-ebs-csi
+  namespace: argocd
+spec:
+  project: default
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: kube-system
+  source:
+    repoURL: 'https://github.com/YOUR_ORG/YOUR_REPO'
+    targetRevision: HEAD
+    path: 'helm/aws-ebs-csi'
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
